@@ -58,7 +58,7 @@ double Ranmar::getUniform() {
 	return res;
 }
 
-void Ranmar::fillUniform(const unsigned int n, double * __restrict__ d) {
+void Ranmar::fillUniform(const size_t n, double * __restrict__ d) {
     for(unsigned int i = 0; i < n; i++) {
         register int r = u[ix] - u[jx--];
         if( r < 0 ) r += 16777216;

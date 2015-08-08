@@ -31,7 +31,7 @@ public:
       return &iseed1;
    }
 
-	void fillUniform(const unsigned int N, double * __restrict__ d);
+	virtual void fillUniform(const size_t n, double * __restrict__ d) override;
 	void setSeed(const unsigned int N) { setState(N, 9373);};
 private:
 	void setState(int ixx, int jxx);

@@ -1,0 +1,5 @@
+*.o
+*.bin
+*.dat
+.depend
+demos/demo0/histogram.png
