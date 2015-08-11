@@ -38,6 +38,7 @@ class Surface2DInterface {
    }
 };
 
+
 class Mandelbrot : public Surface2DInterface {
    public:
 	virtual ~Mandelbrot() {};
@@ -47,7 +48,7 @@ class Mandelbrot : public Surface2DInterface {
 		double x = 0.0, y = 0.0;
 		size_t i = 0;
 		for (i = 0; i < max_iteration && x * x + y * y < 4.0; i++) {
-			double xtemp = x * x - y * y + x0;
+			double xtemp = this->add(x * x, - y * y, x0);
 			y = 2 * x * y + y0;
 			x = xtemp;
 		}
@@ -60,6 +61,33 @@ class Mandelbrot : public Surface2DInterface {
 		lowY = -1.0;
 		highY = 1.0;
 	};
+   virtual double add(const double a, const double b, const double c) const {
+      return a + b + c;
+   }
+};
+class Mandelbrot2 : public Mandelbrot {
+   public:
+	virtual ~Mandelbrot2() {};
+	virtual const char *getName() const override { return "Mandelbrot2"; }
+	virtual double add_safe(const double a, const double b,
+	                        const double c) const {
+		// assumes  a >= 0
+		// assumes  b <= 0
+		const double abs_c = fabs(c);
+		const double d_ab = fabs(a + b);
+		const double d_ac = fabs(a - abs_c);
+		const double d_bc = fabs(fabs(abs_c) + b);
+		if (d_ab <= d_ac && d_ab <= d_bc) {
+			const double ab = a + b;
+			return ab + c;
+		} else if (d_ac < d_bc) {
+			const double ac = a + c;
+			return ac + b;
+		} else {
+			const double bc = b + c;
+			return bc + a;
+		}
+	}
 };
 class Curcle : public Surface2DInterface {
    public:
@@ -82,7 +110,18 @@ class Curcle : public Surface2DInterface {
    }
 };
 
+/*void testAdd() {
+   const double a = 1e10;
+   const double b = -0.1;
+   const double c = -1e10;
+   printf("add      %.*e\n", DECIMAL_DIG, add(a, b, c) );
+   printf("add_safe %.*e\n", DECIMAL_DIG, add_safe(a, b, c) );
+
+}
+*/
+
 int main() {
+ //  testAdd(); 
 	RandomGenerator<double> *rng = newRandomGeneratorD(GT_Ranmar, 1232);
 	//   Surface2DInterface * surface = new Mandelbrot();
 	Surface2DInterface *surface = new Curcle();
