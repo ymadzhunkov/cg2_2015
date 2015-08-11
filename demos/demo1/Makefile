@@ -44,7 +44,7 @@ clean:
 	rm -f *.o $(TARGET).bin 
 
 depend:
-	rm .depend
+	rm -f .depend
 	$(CXX) $(ALLFLAGS) -MM $(SOURCES) >.tmp
 	cat .tmp | sed "s/h$$/h Makefile\n\t$$\(CXX\) $$\(ALLFLAGS\) $$\(RELEASEFLAGS\) -c $$< -o $$\@/">> .depend
 	rm .tmp
