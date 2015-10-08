@@ -31,6 +31,8 @@ public:
 // pure virtuals 
 ///////////////////////////////////////
 	virtual F getUniform() = 0; // returns random number from in [0.0,1.0)
+   virtual void getUniform64(__uint64_t & res);
+   virtual void getUniform32(__uint32_t & res);
 
 ///////////////////////////////////////
 // sampling different distributions
