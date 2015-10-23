@@ -1,4 +1,4 @@
-presentation.pdf: presentation.tex beamerthemechaosgroup.sty Makefile convergence.png animated/randu-0.png animated/randu3d-0.png animated/inversetransform-0.png animated/rejection-0.png animated/montecarlo-0.png conclusion.tex mandelbrod.tex montecarlo_integration.tex variancereduction.tex generators.tex montecarlo_convergence.tex montecarlo_trapec.tex montecarlo_pi.tex probability.tex introduction.tex  montecarlo_definition.tex sampling.tex
+presentation.pdf: presentation.tex beamerthemechaosgroup.sty Makefile convergence.png animated/randu-0.png animated/randu3d-0.png animated/inversetransform-0.png animated/rejection-0.png animated/montecarlo-0.png conclusion.tex mandelbrod.tex montecarlo_integration.tex variancereduction.tex generators.tex montecarlo_convergence.tex montecarlo_trapec.tex montecarlo_pi.tex probability.tex introduction.tex  montecarlo_definition.tex sampling.tex ../demos/demo0/histogram.png
 	pdflatex presentation.tex
 
 convergence.png: plots/convergence.gnuplot

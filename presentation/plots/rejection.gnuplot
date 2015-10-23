@@ -1,5 +1,5 @@
 #set terminal wxt size 1024,768 enhanced font 'Verdana,10' persist
-set term png transparent size 1024,768 enhanced truecolor font 'Verdana,16'
+set term png transparent size 1500,800 enhanced truecolor font 'Verdana,16'
 
 # change a color of border.
 set border lw 2 lc rgb "white"
