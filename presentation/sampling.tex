@@ -1,0 +1,77 @@
+
+\begin{frame}
+  \frametitle{Семплиране}
+  Дискретна дистрибуция
+  \pause
+  \begin{equation*}
+    p_0, p_1 \dots p_{n-1} \rightarrow 0, 1, \dots n-1, \quad \sum_{i=0}^{n-1}p_i = 1
+  \end{equation*}
+  \pause
+  Методи за семплиране
+  \begin{itemize}
+   \item Линейно търсене \pause
+   \item Двоично търсене \pause
+   \item Индексно търсене \pause
+   \item Alias method
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Семплиране}
+  Непрекъсната дистрибуция - $f(x), F(x)$\\
+  \pause
+  Методи за независими семпли
+  \begin{itemize}
+   \item Отхвърляне \pause
+   \item Обратна трансформация \pause
+   \item За специални разпределения
+  \end{itemize}
+  \pause
+  Методи за корелирани семпли
+  \begin{itemize}
+   \item Марков Монте Карло\pause
+   \item Метрополис-Хастингс \pause
+   \item Гиббс \pause
+   \item други
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Отхвърляне}
+  \multiinclude[<+>][format=png,start=0,end=5,graphics={height=7.5cm}]{animated/rejection_one}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Отхвърляне}
+  \animategraphics[height=7.5cm,loop,autoplay]{2}{animated/rejection-}{0}{9}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Обратна трансформация}
+  \multiinclude[<+>][format=png,start=0,end=5,graphics={height=7.5cm}]{animated/inversetransform}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Нормално разпределение}
+  \begin{itemize}
+  \item \textbf{Плътност}
+  \begin{equation*}
+      f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \pause
+  \end{equation*}
+  \item \textbf{Кумулативна функция}
+  \begin{equation*}
+      F(x) = \frac{1}{2} [1 + erf(\frac{x-\mu}{\sigma\sqrt{2}})] \pause
+  \end{equation*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Box-Muller}
+  \begin{equation*}
+  x = \sqrt{ -2 \ln r_1} \cos(2\pi r_2), \quad   y = \sqrt{ -2 \ln r_1} \sin(2\pi r_2)
+  \end{equation*}
+  \begin{centering}
+  \includegraphics[height=6.5cm]{../demos/demo0/histogram.png}
+  \end{centering}
+\end{frame}

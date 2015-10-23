@@ -1,0 +1,14 @@
+
+\begin{frame}[fragile]
+\frametitle{Монте Карло - Дефиниция}
+\pause
+\begin{lstlisting}
+RandomGenerator rng;
+for (int i = 0; i < nSamples; i++) {
+   x   = sample(rng, ..);
+   res = compute(x, ..);
+   accumulate(res);
+}
+reportResults();
+\end{lstlisting}
+\end{frame}

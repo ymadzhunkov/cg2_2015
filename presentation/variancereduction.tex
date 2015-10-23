@@ -1,0 +1,81 @@
+
+%\begin{frame}
+%  \frametitle{Намаляване на вариацията}
+%
+%  \begin{equation*}
+%  I = \int_{\Omega} h(\mathbf{x}) d \mathbf{x}, \quad
+%  x \in \mathbb{R}^d,  \quad
+%  V = \int_{\Omega} d \mathbf{x}
+%  \end{equation*}
+
+%  \begin{equation*}
+%  Q_N = V \frac{1}{N} \sum_{i=1}^N h(\mathbf{x_i}) = V \overline{\mathbf{h}}, \quad 
+%  \mathbf{x_1}, \mathbf{x_2}, \dots,  \mathbf{x_N} \in \Omega
+%  \end{equation*}
+
+%  \begin{equation*}
+%  \mathrm{Var} (h) = \sigma_N^2 = \frac{1}{N-1} \sum_{i=1}^N (h(\mathbf{x_i}) - \overline{\mathbf{h}})^2
+%  \end{equation*}
+
+%  \begin{equation*}
+%  \delta Q_N = \sqrt{\mathrm{Var}(Q_N)} = V \frac{\sigma_n} {\sqrt{N}}
+%  \end{equation*}
+
+%\end{frame}
+\begin{frame}
+%  \frametitle{Importance sampling}
+  \frametitle{Намаляване на вариацията}
+  \begin{equation*}
+  I = 
+  \int_{\Omega} h(x) d x = \pause 
+  \int_{\Omega} h(x) \frac{f(x)}{f(x)} dx = \pause
+  \end{equation*}
+
+  \begin{equation*}
+  = \int_{\Omega} h(x) \frac{1}{f(x)} d(F(x)) \Rightarrow \pause
+  \end{equation*}
+
+  \begin{equation*}
+  Q_N = \frac{1}{N} \sum_{i=1}^N \frac{h(x_i)}{f(x_i)} , \quad 
+  x_1, x_2, \dots, x_N \sim F 
+  \end{equation*}
+
+%  \begin{equation*}
+%   y_i = F^{-1}(r_i), \quad r_i \in [0..1], \text{uniform}
+%  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Намаляване на вариацията}
+  \begin{equation*}
+  I = \int_{\Omega} h(x) d x = \pause 
+  \int_{\Omega} f_1(x) f_2(x) dx \pause
+  \end{equation*}
+
+  \begin{equation*}
+  Q_1 =  \frac{1}{N_1} \sum_{i=1}^{N_1} \frac{f_1(y_i)f_2(y_i)}{f_1(y_i)} = \pause
+   \frac{1}{N_1} \sum_{i=1}^{N_2} f_2(y_i), \pause 
+  y_i \sim F_1
+  \end{equation*}
+  \pause
+
+  \begin{equation*}
+  Q_2 =  \frac{1}{N_2} \sum_{i=1}^{N_2} \frac{f_1(z_i)f_2(z_i)}{f_2(z_i)} = \pause
+   \frac{1}{N_2} \sum_{i=1}^{N_2} f_1(z_i), \pause
+  z_i \sim F_2
+  \end{equation*}
+
+
+\end{frame}
+\begin{frame}
+  \frametitle{Намаляване на вариацията}
+  \begin{equation*}
+  Q_{N} = w_1 Q_1 + w_2 Q_2 
+  \end{equation*} 
+  \pause
+
+  \begin{equation*}
+  I = \int_{\Omega} h(x) d x =
+  \sum_{i} \int_{\Omega_i} h(x) dx
+  \end{equation*}
+\end{frame}

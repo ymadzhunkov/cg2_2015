@@ -5,8 +5,9 @@ min=-4. #min value
 width=(max-min)/n #interval width
 #function used to map a value to the intervals
 hist(x,width)=width*floor(x/width)+width/2.0
-set term png #output terminal and file
-set term png enhanced size 1280,1024
+#set term png #output terminal and file
+#set term png enhanced size 1280,1024
+set term png transparent size 1024,768 enhanced truecolor font 'Verdana,16'
 set output "histogram.png"
 set xrange [min:max]
 set yrange [0:]
@@ -17,7 +18,14 @@ set xtics min,(max-min)/5,max
 set boxwidth width*0.9
 set style fill solid 0.5 #fillstyle
 set tics out nomirror
-set xlabel "x"
-set ylabel "Frequency"
+set xlabel "x" textcolor rgb "white"
+set ylabel "Frequency" textcolor rgb "white"
+# change text colors of  tics
+set xtics textcolor rgb "white"
+set ytics textcolor rgb "white"
+# Line width of the axes
+set border linewidth 1.5
+# change a color of border.
+set border lw 5 lc rgb "white"
 #count and plot
-plot "data.dat" u (hist($1,width)):(1.0) smooth freq w boxes lc rgb"green" notitle
+plot "data.dat" u (hist($1,width)):(1.0) smooth freq w boxes lc rgb"grey" notitle

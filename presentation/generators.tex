@@ -1,0 +1,65 @@
+
+\begin{frame}
+  \frametitle{Генератори}
+\begin{columns}
+\column{0.5\textwidth}
+  Класове
+  \begin{itemize}
+   \item Истински \pause
+   \item Псевдо \pause
+   \item Криптографни \pause
+   \item Квази \pause
+  \end{itemize}
+\column{0.5\textwidth}
+  Характеристики
+  \begin{itemize}
+  \item Период\pause
+  \item Гъстота \pause
+  \item Разпределение \pause
+  \item Корелация \pause
+  \item Памет \pause
+  \item Ефективност
+  \end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  IBM - randu
+  \begin{equation*}
+   r_{i+1} = (a r_i + c) \mod m 
+  \end{equation*} 
+  \pause
+  \begin{equation*}
+  a = 2^{16} + 3, c = 0, m = 2^{31}
+  \end{equation*} 
+  \pause
+  \begin{equation*}
+  s = 9 x - 6 y + z
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Генератори - Пример}
+  \begin{figure}[t]
+    \animategraphics[height=7.5cm,loop,autoplay]{2}{animated/randu-}{0}{9}
+%    \includegraphics[height=7.5cm]{randu-9.png}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \frametitle{Генератори - Пример}
+  \begin{figure}[t]
+    \animategraphics[height=7.5cm,autoplay]{2}{animated/randu3d-}{0}{9}
+%    \includegraphics[height=7.5cm]{randu3d-9.png}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Генератори}
+  Монте Карло
+  \begin{itemize}
+   \item Mersenne Twister, 32 bit, $T \approx 10^{6000} $ \pause
+   \item Ranmar, 24 bit, $T \approx 10^{43} $ \pause
+   \item Други
+  \end{itemize}
+\end{frame}
